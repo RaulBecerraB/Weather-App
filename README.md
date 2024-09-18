@@ -1,8 +1,9 @@
-# React + Vite
+# Weather-App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based weather application that consumes data from a weather API. It provides users with real-time weather updates for any city. The app features a clean and intuitive user interface, making it easy to check current weather conditions and forecasts.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Key Features:
+Real-time Weather Data: Fetches current weather information from a reliable API.
+City Search: Allows users to search for weather updates by city name.
+Responsive Design: Optimized for both desktop and mobile devices.
+User-friendly Interface: Simple and clean UI for a seamless user experience.
