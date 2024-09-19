@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ({description,city,icon}) => {
     return (
         <div>
             <div className="container">
