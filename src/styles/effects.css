@@ -1,4 +1,10 @@
-.shadowedPNG {
+.shadowed,.weatherIcon {
   -webkit-filter: drop-shadow(5px 5px 5px #4b6acf);
   filter: drop-shadow(5px 5px 5px #7aafff);
+}
+
+.weatherIcon
+{
+    width: 35%;
+    height: 35%;
 }

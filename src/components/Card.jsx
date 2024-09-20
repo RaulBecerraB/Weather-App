@@ -5,10 +5,11 @@ const Card = ({ weather, city, icon }) => {
         <div>
             <div className="container">
                 <h1>{weather}</h1>
-                <img className='shadowedPNG'
-                    src='./'
+                <img className='weatherIcon'
+                    src='./src/assets/weather-icons/cloud-rain.svg'
                     alt="icon"
                 />
+                <input type="text" />
             </div>
         </div>
     )
