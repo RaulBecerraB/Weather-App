@@ -5,7 +5,10 @@ const Card = ({ weather, city, icon }) => {
         <div>
             <div className="container">
                 <h1>{weather}</h1>
-                <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="icon" />
+                <img className='shadowedPNG'
+                    src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+                    alt="icon"
+                />
             </div>
         </div>
     )
