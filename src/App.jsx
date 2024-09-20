@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useEffect } from 'react';
+import { fetchWeatherData } from './scripts/fetchWeatherData.js'
 
 import Card from './components/Card.jsx'
 
@@ -13,19 +14,6 @@ function App() {
 
   const URL = 'https://api.openweathermap.org/data/2.5/weather'
   const API_KEY = 'a57c9e23bfa0b457b14e592bd72c87eb'
-
-  async function fetchWeatherData(city, URL, API_KEY) {
-    const res = await fetch(`${URL}?q=${city}&apiKey=${API_KEY}`);
-    const data = await res.json();
-
-    const weatherInfo = {
-      cityName: data.name,
-      weather: data.weather[0].description,
-      icon: data.weather[0].icon
-    };
-
-    return weatherInfo;
-  }
 
   useEffect(() => {
     async function getWeather() {
