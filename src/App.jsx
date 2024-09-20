@@ -42,6 +42,7 @@ function App() {
       <Card city={weatherInfo.cityName}
         weather={weatherInfo.weather}
         icon={weatherInfo.icon}>
+        <input type="text" contextMenu=''/>
       </Card>
       <button className='container' onClick={() => changeCity('London')}></button>
     </div>

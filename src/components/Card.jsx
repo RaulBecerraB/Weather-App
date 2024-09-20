@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = ({ weather, city, icon }) => {
+const Card = ({ weather, city, icon, children }) => {
     return (
         <div>
             <div className="container">
@@ -9,7 +9,10 @@ const Card = ({ weather, city, icon }) => {
                     src='./src/assets/weather-icons/cloud-rain.svg'
                     alt="icon"
                 />
-                <input type="text" />
+                <div>
+                    <h2>How is the weather on:</h2>
+                    {children}
+                </div>
             </div>
         </div>
     )
