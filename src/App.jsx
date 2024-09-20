@@ -14,26 +14,32 @@ function App() {
   const URL = 'https://api.openweathermap.org/data/2.5/weather'
   const API_KEY = 'a57c9e23bfa0b457b14e592bd72c87eb'
 
-  useEffect(() => {
-    async function fetchWeatherData(city) {
-      const res = await fetch(`${URL}?q=${city}&apiKey=${API_KEY}`)
-      const data = await res.json()
-      console.log(data.weather[0].description)
-      console.log(data.name)
+  async function fetchWeatherData(city, URL, API_KEY) {
+    const res = await fetch(`${URL}?q=${city}&apiKey=${API_KEY}`);
+    const data = await res.json();
 
-      const weatherInfo =
-      {
-        cityName: data.name,
-        weather: data.weather[0].description,
-        icon: data.weather[0].icon
+    const weatherInfo = {
+      cityName: data.name,
+      weather: data.weather[0].description,
+      icon: data.weather[0].icon
+    };
+
+    return weatherInfo;
+  }
+
+  useEffect(() => {
+    async function getWeather() {
+      try {
+        const weatherData = await fetchWeatherData(city, URL, API_KEY);
+        setWeatherInfo(weatherData);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
       }
-      console.log(weatherInfo.icon)
-      setWeatherInfo(weatherInfo)
     }
 
-    fetchWeatherData(city)
-
+    getWeather();
   }, [city]);
+
 
   const changeCity = (name) => setCity(name)
 

@@ -10,7 +10,7 @@ const Card = ({ weather, city, icon, children }) => {
                     alt="icon"
                 />
                 <div>
-                    <h2>How is the weather on:</h2>
+                    <h2>How is the weather in:</h2>
                     {children}
                 </div>
             </div>
