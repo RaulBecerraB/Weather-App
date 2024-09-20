@@ -27,7 +27,7 @@ function App() {
         weather: data.weather[0].description,
         icon: data.weather[0].icon
       }
-
+      console.log(weatherInfo.icon)
       setWeatherInfo(weatherInfo)
     }
 
@@ -39,7 +39,10 @@ function App() {
 
   return (
     <div>
-      <Card city={weatherInfo.cityName} weather={weatherInfo.weather} icon={weatherInfo.icon}></Card>
+      <Card city={weatherInfo.cityName}
+        weather={weatherInfo.weather}
+        icon={weatherInfo.icon}>
+      </Card>
       <button className='container' onClick={() => changeCity('London')}></button>
     </div>
   )
