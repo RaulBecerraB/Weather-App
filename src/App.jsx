@@ -37,14 +37,17 @@ function App() {
 
   const changeCity = (name) => setCity(name)
 
+  const handleInputChange = (event) => {
+    setCity(event.target.value);
+  };
+
   return (
     <div>
       <Card city={weatherInfo.cityName}
         weather={weatherInfo.weather}
         icon={weatherInfo.icon}>
-        <input type="text" contextMenu=''/>
+        <input type="text" value={city} onChange={handleInputChange} />
       </Card>
-      <button className='container' onClick={() => changeCity('London')}></button>
     </div>
   )
 }
