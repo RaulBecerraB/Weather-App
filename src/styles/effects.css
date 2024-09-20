@@ -1,2 +1,4 @@
 .shadowedPNG {
+  -webkit-filter: drop-shadow(5px 5px 5px #4b6acf);
+  filter: drop-shadow(5px 5px 5px #7aafff);
 }

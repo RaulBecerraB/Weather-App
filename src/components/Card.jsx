@@ -6,7 +6,7 @@ const Card = ({ weather, city, icon }) => {
             <div className="container">
                 <h1>{weather}</h1>
                 <img className='shadowedPNG'
-                    src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+                    src='./'
                     alt="icon"
                 />
             </div>
