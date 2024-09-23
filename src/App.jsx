@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useEffect } from 'react';
 import { fetchWeatherData } from './scripts/fetchWeatherData.js'
+import { getWeather } from './scripts/getWeather.js'
 
 import Card from './components/Card.jsx'
 
@@ -16,16 +17,13 @@ function App() {
   const API_KEY = 'a57c9e23bfa0b457b14e592bd72c87eb'
 
   useEffect(() => {
-    async function getWeather() {
-      try {
-        const weatherData = await fetchWeatherData(city, URL, API_KEY);
-        setWeatherInfo(weatherData);
-      } catch (error) {
 
-      }
+    const fetchWeather = async () => {
+      const weatherData = await getWeather(city, URL, API_KEY)
+      setWeatherInfo(weatherData)
     }
 
-    getWeather();
+    fetchWeather()
 
     if (weatherInfo.weather === 'clear sky') {
       setIcon('./src/assets/weather-icons/sun.svg')
