@@ -9,8 +9,8 @@ function App() {
   const [weatherInfo, setWeatherInfo] = useState({
     cityName: '',
     weather: '',
-    icon: ''
   })
+  const [icon, setIcon] = useState('')
 
   const URL = 'https://api.openweathermap.org/data/2.5/weather'
   const API_KEY = 'a57c9e23bfa0b457b14e592bd72c87eb'
@@ -21,11 +21,39 @@ function App() {
         const weatherData = await fetchWeatherData(city, URL, API_KEY);
         setWeatherInfo(weatherData);
       } catch (error) {
-        console.error("Error fetching weather data:", error);
+
       }
     }
 
     getWeather();
+
+    if (weatherInfo.weather === 'clear sky') {
+      setIcon('./src/assets/weather-icons/sun.svg')
+    }
+    else if (weatherInfo.weather === 'few clouds') {
+      setIcon('./src/assets/weather-icons/cloud-sun.svg')
+    }
+    else if (weatherInfo.weather === 'scattered clouds') {
+      setIcon('./src/assets/weather-icons/cloud.svg')
+    }
+    else if (weatherInfo.weather === 'broken clouds') {
+      setIcon('./src/assets/weather-icons/multiple-clouds.svg')
+    }
+    else if (weatherInfo.weather === 'shower rain') {
+      setIcon('./src/assets/weather-icons/cloud-showers.svg')
+    }
+    else if (weatherInfo.weather === 'rain') {
+      setIcon('./src/assets/weather-icons/cloud-rain.svg')
+    }
+    else if (weatherInfo.weather === 'thunderstorm') {
+      setIcon('./src/assets/weather-icons/cloud-bolt.svg')
+    }
+    else if (weatherInfo.weather === 'snow') {
+      setIcon('./src/assets/weather-icons/snowflake.svg')
+    }
+    else if (weatherInfo.weather === 'mist') {
+      setIcon('./src/assets/weather-icons/mist.svg')
+    }
   }, [city]);
 
 
@@ -39,7 +67,7 @@ function App() {
     <div>
       <Card city={weatherInfo.cityName}
         weather={weatherInfo.weather}
-        icon={weatherInfo.icon}>
+        icon={icon}>
         <input type="text" value={city} onChange={handleInputChange} />
       </Card>
     </div>

@@ -6,8 +6,8 @@ const Card = ({ weather, city, icon, children }) => {
             <div className="container">
                 <h1>{weather}</h1>
                 <img className='weatherIcon'
-                    src='./src/assets/weather-icons/cloud-rain.svg'
-                    alt="icon"
+                    src={icon}
+                alt="icon"
                 />
                 <div>
                     <h2>How is the weather in:</h2>
