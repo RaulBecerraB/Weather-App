@@ -50,7 +50,8 @@ function App() {
       'thunderstorm': './src/assets/weather-icons/cloud-bolt.svg',
       'snow': './src/assets/weather-icons/snowflake.svg',
       'mist': './src/assets/weather-icons/mist.svg',
-      'moderate rain': './src/assets/weather-icons/cloud-showers.svg'
+      'moderate rain': './src/assets/weather-icons/cloud-showers.svg',
+      'light rain': './src/assets/weather-icons/cloud-showers.svg'
     };
 
     const iconPath = weatherIcons[weatherInfo.weather];
